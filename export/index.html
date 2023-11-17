@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Chestionar pentru depistarea TSA (export)</title>
+    <link rel="stylesheet" href="../css/stil.css">
+    <script src="./js/functii.js"></script>
+  </head>
+  <body onload="extragedatedinurlsiafiseaza()">
+    <header class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid d-flex justify-content-center">
+        <h3 class="my-0 text-center">Chestionar pentru depistarea TSA (export)</h3>
+      </div>
+    </header>
+    <div class="main-content">
+      <div class="container-fluid pt-3">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered my-0">
+                <tr>
+                  <th>Punctajul</th>
+                  <th>Nivelul de risc</th>
+                  <th>Recomandări</th>
+                </tr>
+                <tr>
+                  <td id="punctajafis">Invalid</td>
+                  <td id="riscafis">Invalid</td>
+                  <td id="recomandariafis">Invalid</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <form>
+              <p>Va rugăm să completați următoarele câmpuri pentru a finaliza exportul (Datele nu sunt salvate pe server):</p>
+              <div class="card mb-3">
+                <div class="card-header">Datele medicului de familie</div>
+                <div class="card-body">
+                  <label for="CUIinput" class="form-label">CUI Furnizor*</label>
+                  <input type="text" class="form-control mb-3" placeholder="Introduceți CUI-ul furnizorului (12 caractere)..." maxlength="12" id="CUIinput" required>
+                  <label for="codparafainput" class="form-label">Cod parafă medic*</label>
+                  <input type="tel" class="form-control" placeholder="Introduceți codul parafă a medicului (6 cifre)..." maxlength="6" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" id="codparafainput" required>
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-header">Datele copilului</div>
+                <div class="card-body">
+                  <label for="CNPcopilinput" class="form-label">CNP copil*</label>
+                  <input type="tel" class="form-control mb-3" placeholder="Introduceți CNP-ul copilului (13 cifre)..." maxlength="13" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" id="CNPcopilinput" required>
+                  <label for="varstacopilinput" class="form-label">Vârstă copil</label>
+                  <input type="text" class="form-control" placeholder="Aici este afișată vârsta copilului..." id="varstacopilinput" readonly required>
+                </div>
+              </div>
+              <label for="datacompletariinput" class="form-label">Data completării chestionarului</label>
+              <input type="text" class="form-control mb-3" placeholder="Aici este afișată data completării chestionarului..." id="datacompletariinput" readonly required>
+              <button class="btn btn-block btn-primary" onclick="exportdate()">Exportați datele</button>
+            </form>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <button class="btn btn-block btn-danger" onclick="anuleazaexportul()">Anulați procesul de export</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
