@@ -15,7 +15,7 @@ let parametriiurl = new URLSearchParams(window.location.search);
 
 
 function export_construiesteurlsinavigheaza() {
-  let url = "https://miculpionier.ro/govro/siui/chestionar-tsa/export/?punctaj=" + punctaj + "&risc=" + document.getElementById("riscafis").innerHTML + "&recomandari=" + document.getElementById("recomandariafis").innerHTML + "&varsta=" + parametriiurl.get('varsta');
+  let url = "../export/?punctaj=" + punctaj + "&risc=" + document.getElementById("riscafis").innerHTML + "&recomandari=" + document.getElementById("recomandariafis").innerHTML + "&varsta=" + parametriiurl.get('varsta');
   window.location.href = url;
 }
 
