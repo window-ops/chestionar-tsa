@@ -59,7 +59,7 @@ function afiseazapnr() {
 function refachestionarul() {
   let confirmare = confirm("Sigur vreți să refaceți chestionarul? OK = DA; Cancel = NU");
   if (confirmare) {
-    let url = "https://miculpionier.ro/govro/siui/chestionar-tsa/2-18-ani/?varsta=" + varsta;
+    let url = "../2-18-ani/?varsta=" + varsta;
     window.location.href = url;
   }
 }
