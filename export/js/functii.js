@@ -26,8 +26,8 @@ function extragedatedinurlsiafiseaza() {
   recomandariobtinute = parametriiurl.get('recomandari');
   varstaobtinuta = parametriiurl.get('varsta');
   
-  // Verifică dacă toate parametrii necesari există și sunt valizi
-  if (![punctajobtinut, riscobtinut, recomandariobtinute, varstaobtinuta].every(Boolean) || isNaN(parseInt(punctajobtinut)) || isNaN(parseInt(varstaobtinuta)) || punctajobtinut.trim() === "" || riscobtinut.trim() === "" || recomandariobtinute.trim() === "" || varstaobtinuta.trim() === "") {
+  // Verifică dacă toți parametrii necesari există și sunt valizi
+  if (!obtineparametriiurl.has('punctaj') || !obtineparametriiurl.has('risc') || !obtineparametriiurl.has('recomandari') || !obtineparametriiurl.has('varsta') || ![punctajobtinut, riscobtinut, recomandariobtinute, varstaobtinuta].every(Boolean) || isNaN(parseInt(punctajobtinut)) || isNaN(parseInt(varstaobtinuta))) {
     alert("Exportul nu este valid, vă rugăm să reveniți de la început pentru a alege un chestionar corespunzător!");
     window.location.href = "https://miculpionier.ro/govro/siui/chestionar-tsa";
     return;
