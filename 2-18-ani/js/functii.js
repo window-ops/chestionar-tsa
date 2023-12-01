@@ -5,19 +5,16 @@ let obtineparametriiurl = new URLSearchParams(window.location.search);
 let varsta = obtineparametriiurl.get('varsta');
 
 function extragevarstadinurlsiafiseaza() {
-  // Verifică dacă toate parametrii necesari există și sunt valizi
-  if (![varsta].every(Boolean) || isNaN(parseInt(varsta)) || varsta.trim() === "") {
+  // Verifică dacă toți parametrii necesari există și sunt valizi
+  if (!obtineparametriiurl.has('varsta') || !varsta.endsWith(" ani") || ![varsta].every(Boolean) || isNaN(parseInt(varsta)) || parseInt(varsta.trim()) < 2 || parseInt(varsta.trim()) > 18) {
     alert("Chestionarul nu este valid, vă rugăm să reveniți de la început pentru a alege un chestionar corespunzător!");
-    window.location.href = "https://miculpionier.ro/govro/siui/chestionar-tsa";
+    window.location.href = "..";
     return;
   }
 
   // Afișează
   document.title = "Chestionar pentru depistarea TSA (" + varsta + ")";
   document.getElementById("titlu").innerHTML = "Chestionar pentru depistarea TSA (" + varsta + ")";
-  
-  // Șterge parametrii din URL pentru a preveni modificarea
-  history.replaceState(null, null, window.location.pathname);
 }
 
 function raspunde(idintrebare, adaugarepunctaj) {
