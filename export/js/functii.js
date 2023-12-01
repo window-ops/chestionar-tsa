@@ -29,7 +29,7 @@ function extragedatedinurlsiafiseaza() {
   // Verifică dacă toți parametrii necesari există și sunt valizi
   if (!obtineparametriiurl.has('punctaj') || !obtineparametriiurl.has('risc') || !obtineparametriiurl.has('recomandari') || !obtineparametriiurl.has('varsta') || ![punctajobtinut, riscobtinut, recomandariobtinute, varstaobtinuta].every(Boolean) || isNaN(parseInt(punctajobtinut)) || isNaN(parseInt(varstaobtinuta))) {
     alert("Exportul nu este valid, vă rugăm să reveniți de la început pentru a alege un chestionar corespunzător!");
-    window.location.href = "https://miculpionier.ro/govro/siui/chestionar-tsa";
+    window.location.href = "..";
     return;
   }
 
@@ -102,7 +102,7 @@ function exportdate() {
 function anuleazaexportul() {
   let confirmare = confirm("Sigur vreți să anulați procesul de export și să pierdeți permanent datele introduse? OK = DA; Cancel = NU");
   if (confirmare) {
-    let url = "https://miculpionier.ro/govro/siui/chestionar-tsa";
+    let url = "..";
     window.location.href = url;
   }
 }
