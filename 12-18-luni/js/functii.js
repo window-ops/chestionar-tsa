@@ -62,7 +62,7 @@ function afiseazapnr() {
 function refachestionarul() {
   let confirmare = confirm("Sigur vreți să refaceți chestionarul? OK = DA; Cancel = NU");
   if (confirmare) {
-    let url = "https://miculpionier.ro/govro/siui/chestionar-tsa/12-18-luni/?varsta=" + varsta;
+    let url = "../12-18-luni/?varsta=" + varsta;
     window.location.href = url;
   }
 }
