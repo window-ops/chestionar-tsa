@@ -15,7 +15,7 @@ let parametriiurl = new URLSearchParams(window.location.search);
 
 
 function export_construiesteurlsinavigheaza() {
-  let url = "../export/?punctaj=" + punctaj + "&risc=" + document.getElementById("riscafis").innerHTML + "&recomandari=" + document.getElementById("recomandariafis").innerHTML + "&varsta=" + parametriiurl.get('varsta');
+  let url = "../export/?punctaj=" + punctaj + "&risc=" + document.getElementById("riscafis").innerHTML + "&recomandari=" + document.getElementById("recomandariafis").innerHTML + "&varsta=" + "24 luni";
   window.location.href = url;
 }
 
@@ -26,8 +26,14 @@ function extragedatedinurlsiafiseaza() {
   recomandariobtinute = parametriiurl.get('recomandari');
   varstaobtinuta = parametriiurl.get('varsta');
   
+  // Dacă vârsta obținută este 2 ani, atunci schimb-o în 24 de luni
+  if (parametriiurl.get('varsta') === "2 ani") {
+    let url = "../export/?punctaj=" + punctajobtinut + "&risc=" + riscobtinut + "&recomandari=" + recomandariobtinute + "&varsta=" + "24 luni";
+    window.location.href = url;
+  }
+  
   // Verifică dacă toți parametrii necesari există și sunt valizi
-  if (!obtineparametriiurl.has('punctaj') || !obtineparametriiurl.has('risc') || !obtineparametriiurl.has('recomandari') || !obtineparametriiurl.has('varsta') || ![punctajobtinut, riscobtinut, recomandariobtinute, varstaobtinuta].every(Boolean) || isNaN(parseInt(punctajobtinut)) || isNaN(parseInt(varstaobtinuta))) {
+  if (!parametriiurl.has('punctaj') || !parametriiurl.has('risc') || !parametriiurl.has('recomandari') || !parametriiurl.has('varsta') || ![punctajobtinut, riscobtinut, recomandariobtinute, varstaobtinuta].every(Boolean) || isNaN(parseInt(punctajobtinut)) || isNaN(parseInt(varstaobtinuta))) {
     alert("Exportul nu este valid, vă rugăm să reveniți de la început pentru a alege un chestionar corespunzător!");
     window.location.href = "..";
     return;
