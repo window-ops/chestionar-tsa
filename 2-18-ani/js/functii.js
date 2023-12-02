@@ -15,6 +15,9 @@ function extragevarstadinurlsiafiseaza() {
   // Afișează
   document.title = "Chestionar pentru depistarea TSA (" + varsta + ")";
   document.getElementById("titlu").innerHTML = "Chestionar pentru depistarea TSA (" + varsta + ")";
+  
+  // Șterge parametrii din URL pentru a preveni modificarea
+  history.replaceState(null, null, window.location.pathname);
 }
 
 function raspunde(idintrebare, adaugarepunctaj) {
