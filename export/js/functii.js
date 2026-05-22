@@ -12,10 +12,10 @@ let luna = luni[datacurenta.getMonth()];
 let anul = datacurenta.getFullYear();
 let dataformatata = ziua + ' ' + luna + ' ' + anul;
 let parametriiurl = new URLSearchParams(window.location.search);
-
+let varstaexport = "";
 
 function export_construiesteurlsinavigheaza() {
-  let url = "../export/?punctaj=" + punctaj + "&risc=" + document.getElementById("riscafis").innerHTML + "&recomandari=" + document.getElementById("recomandariafis").innerHTML + "&varsta=" + "24 luni";
+  let url = "../export/?punctaj=" + punctaj + "&risc=" + document.getElementById("riscafis").innerHTML + "&recomandari=" + document.getElementById("recomandariafis").innerHTML + "&varsta=" + varstaexport;
   window.location.href = url;
 }
 
@@ -28,7 +28,7 @@ function extragedatedinurlsiafiseaza() {
   
   // Dacă vârsta obținută este 2 ani, atunci schimb-o în 24 de luni
   if (parametriiurl.get('varsta') === "2 ani") {
-    let url = "../export/?punctaj=" + punctajobtinut + "&risc=" + riscobtinut + "&recomandari=" + recomandariobtinute + "&varsta=" + "24 luni";
+    let url = "../export/?punctaj=" + punctajobtinut + "&risc=" + riscobtinut + "&recomandari=" + recomandariobtinute + "&varsta=" + varstaobtinuta;
     window.location.href = url;
   }
   
@@ -49,7 +49,6 @@ function extragedatedinurlsiafiseaza() {
   // Șterge parametrii din URL pentru a preveni modificarea
   history.replaceState(null, null, window.location.pathname);
 }
-
 
 function exportdate() {
   // Previne comportamentul implicit de trimitere

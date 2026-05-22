@@ -53,6 +53,9 @@ function afiseazapnr() {
       document.getElementById("recomandariafis").innerHTML = "Trimitere către medicul de specialitate psihiatrie pediatrică / neuropsihiatrie pediatrică";
     }
 
+  	// Setează vârstă export
+  	varstaexport = varsta;
+  	
   	//Ascunde afiseazapnr și afișează pnr
   	document.getElementById("afiseazapnr").remove();
   	document.getElementById("pnr").style.display = "block";
